@@ -39,12 +39,18 @@ class GestorTareas:
             print("Fuera de rango")
         else:
             for a in range(0,len(self.listaTareas), 1):
-                if self.listaTareas[a].getEstado == "Pendiente":
+                if self.listaTareas.getEstado(pos) == "Pendiente":
                     cont+=1
                 if cont == pos:
-                    self.listaTareas[a].setEstado == "Realizada"
+                    self.listaTareas.setEstado(pos) == "Realizada"
                     print("Tarea realizada con exito")
                     break
+    def eliminarTarea(self, pos):
+         self.listaTareas.remove(pos)
+
+
+
+            
             
         
 
