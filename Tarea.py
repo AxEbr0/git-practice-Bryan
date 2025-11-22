@@ -1,6 +1,6 @@
 class Tarea:
-    nombre = str
-    estado = str
+    nombre : str
+    estado : str
 
     def __init__(self, nombre, estado):
         self.nombre = nombre
