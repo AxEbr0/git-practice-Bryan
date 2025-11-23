@@ -1,13 +1,13 @@
-import Tarea
+from Tarea import Tarea
 class GestorTareas:
     
     def __init__(self):
         self.listaTareas = []
 
-    def addTarea(self, nomb, est):
+    def addTarea(self, nomb : str, est :str):
         if nomb == "":
             print("Ingrese un nombre")
-        elif not est == "Pendiente" or not est == "Realizada":
+        elif not est == "Pendiente" and not est == "Realizada":
             print("Ingrese un estado correcto")
         else:
             nuevaTarea = Tarea(nomb, est)
@@ -20,7 +20,8 @@ class GestorTareas:
             print("Tareas:")
             i = 0
             for tarea in self.listaTareas:
-                print(i++ +": " + tarea.getNombre + ", Estado: " + tarea.getEstado)
+                i+=1
+                print(i, ": " + tarea.getNombre() + ", Estado: " + tarea.getEstado())
 
 
     def mostrarTareasPendientes(self):
