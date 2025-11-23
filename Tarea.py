@@ -6,10 +6,10 @@ class Tarea:
         self.nombre = nombre
         self.estado = estado
 
-    def getNombre(self):
+    def get_nombre(self):
         return self.nombre
-    def getEstado(self):
+    def get_estado(self):
         return self.estado
-    def setEstado(self, est):
+    def set_estado(self, est):
         self.estado = est
         

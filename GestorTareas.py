@@ -1,53 +1,67 @@
 from Tarea import Tarea
 class GestorTareas:
+    lista_tareas : list
     
     def __init__(self):
-        self.listaTareas = []
+        self.lista_tareas = []
 
-    def addTarea(self, nomb : str, est :str):
+    def add_tarea(self, nomb : str, est :str):
         if nomb == "":
             print("Ingrese un nombre")
-        elif not est == "Pendiente" and not est == "Realizada":
+        elif est not in ("Realizada","Pendiente"):
             print("Ingrese un estado correcto")
         else:
-            nuevaTarea = Tarea(nomb, est)
-            self.listaTareas.append(nuevaTarea)
+            self.lista_tareas.append(Tarea(nomb, est))
 
-    def mostrarTareas(self):
-        if self.listaTareas == []:
-            print("Esta lista de tareas esta vacía")
+    def mostrar_tareas(self):
+        if self.lista_tareas == []:
+            print("No hay tareas registradas")
         else:
             print("Tareas:")
             i = 0
-            for tarea in self.listaTareas:
+            for tarea in self.lista_tareas:
                 i+=1
-                print(i, ": " + tarea.getNombre() + ", Estado: " + tarea.getEstado())
+                print(i, ":", tarea.get_nombre(), ", Estado:", tarea.get_estado())
 
-
-    def mostrarTareasPendientes(self):
-        if self.listaTareas == []:
-            print("Esta lista de tareas esta vacía")
+    def obtener_tareas_pendientes(self)-> list:
+      return [n for n in self.lista_tareas if n.get_estado()=="Pendiente"]
+    
+    def mostrar_tareas_pendientes(self):
+        if self.lista_tareas == []:
+            print("No hay tareas registradas")
+            return
+        tareas_pendientes = self.obtener_tareas_pendientes()
+        if tareas_pendientes == []:
+            print("No hay tareas pendientes")
         else:
-            print("Tareas sin realizar:")
+            print("Tareas pendientes:")
             i = 0
-            for tarea in self.listaTareas:
-                if tarea.getEstado == "Pendiente":
-                    print(i++ +": " + tarea.getNombre)
+            for tarea in tareas_pendientes:
+                    i+=1
+                    print(i ,":" , tarea.get_nombre())
 
-    def marcarRealizada(self, pos):
-        cont = 0
-        if pos>len(self.listaTareas):
-            print("Fuera de rango")
+    def marcar_realizada(self, pos):
+        pos-=1
+        cont = -1
+        if (pos>=len(self.obtener_tareas_pendientes())) or (pos < 0):
+            print("La tarea seleccionada no existe")
         else:
-            for a in range(0,len(self.listaTareas), 1):
-                if self.listaTareas.getEstado(pos) == "Pendiente":
+            for a in range(len(self.lista_tareas)):
+                if self.lista_tareas[a].get_estado() == "Pendiente":
                     cont+=1
                 if cont == pos:
-                    self.listaTareas.setEstado(pos) == "Realizada"
+                    self.lista_tareas[a].set_estado("Realizada")
                     print("Tarea realizada con exito")
-                    break
-    def eliminarTarea(self, pos):
-         self.listaTareas.remove(pos)
+                    return
+                  
+    def eliminar_tarea(self, pos):
+        pos-=1
+        if (pos>=len(self.lista_tareas)) or (pos<0):
+          print("La tarea seleccionada no existe")
+          return
+         
+        self.lista_tareas.pop(pos)
+        print("Tarea eliminada con exito")
 
 
 
