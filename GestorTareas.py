@@ -12,6 +12,7 @@ class GestorTareas:
             print("Ingrese un estado correcto")
         else:
             self.lista_tareas.append(Tarea(nomb, est))
+            
 
     def mostrar_tareas(self):
         if self.lista_tareas == []:
@@ -26,7 +27,7 @@ class GestorTareas:
     def obtener_tareas_pendientes(self)-> list:
       return [n for n in self.lista_tareas if n.get_estado()=="Pendiente"]
     
-    def mostrar_tareas_pendientes(self):
+    def mostrar_tareas_lista(self):
         if self.lista_tareas == []:
             print("No hay tareas registradas")
             return
