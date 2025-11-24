@@ -1,0 +1,30 @@
+[
+    {
+        "nombre": "Arreglar TV",
+        "estado": "Realizada"
+    },
+    {
+        "nombre": "Arreglar mesa",
+        "estado": "Pendiente"
+    },
+    {
+        "nombre": "Arreglar silla",
+        "estado": "Pendiente"
+    },
+    {
+        "nombre": "Arreglar refrigerador",
+        "estado": "Realizada"
+    },
+    {
+        "nombre": "Arreglar PC",
+        "estado": "Pendiente"
+    },
+    {
+        "nombre": "Arreglar puerta",
+        "estado": "Realizada"
+    },
+    {
+        "nombre": "Arreglar a la vecina",
+        "estado": "Pendiente"
+    }
+]
