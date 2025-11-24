@@ -3,14 +3,13 @@ import os
 def main() :
   salir = False
   gestor = GestorTareas()
-  gestor.add_tarea("Arreglar ventilador", "Pendiente")
-  gestor.add_tarea("Arreglar TV", "Realizada")
-  gestor.add_tarea("Arreglar mesa", "Pendiente")
-  gestor.add_tarea("Arreglar silla", "Pendiente")
-  gestor.add_tarea("Arreglar refrigerador", "Realizada")
-  gestor.add_tarea("Arreglar PC", "Pendiente")
-  gestor.add_tarea("Arreglar puerta", "Realizada")
-  gestor.add_tarea("Arreglar a la vecina", "Pendiente")
+  #gestor.add_tarea("Arreglar ventilador", "Pendiente")
+  #gestor.add_tarea("Arreglar mesa", "Pendiente")
+  #gestor.add_tarea("Arreglar silla", "Pendiente")
+  #gestor.add_tarea("Arreglar refrigerador", "Realizada")
+  #gestor.add_tarea("Arreglar PC", "Pendiente")
+  #gestor.add_tarea("Arreglar puerta", "Realizada")
+  #gestor.add_tarea("Arreglar a la vecina", "Pendiente")
   
   while salir==False:
     print("Gestor de tareas programadas")
