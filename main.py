@@ -1,6 +1,6 @@
 from GestorTareas import GestorTareas
 import os
-def main() :
+def main():
   salir = False
   gestor = GestorTareas()
   #gestor.add_tarea("Arreglar ventilador", "Pendiente")

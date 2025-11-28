@@ -3,7 +3,7 @@ import os
 from Tarea import Tarea
 
 class GestorTareas:
-    lista_tareas : list
+    lista_tareas: list
     ARCHIVO_DB = "data.json"
     
     def __init__(self):
